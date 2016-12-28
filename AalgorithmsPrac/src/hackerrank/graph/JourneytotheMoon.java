@@ -1,4 +1,4 @@
-package hackerank.graph;
+package hackerrank.graph;
 
 import java.util.ArrayList;
 import java.util.HashSet;
