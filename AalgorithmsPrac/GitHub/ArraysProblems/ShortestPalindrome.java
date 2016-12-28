@@ -10,6 +10,7 @@ public class ShortestPalindrome {
 		if(input.trim().length()==0) {
 			return "";
 		}
+		//asdad
 		StringBuffer output = new StringBuffer("");
 		int start = 0;
 		int end = input.length()-1;
