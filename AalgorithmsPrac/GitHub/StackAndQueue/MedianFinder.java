@@ -3,6 +3,9 @@ package StackAndQueue;
 import java.util.Collections;
 import java.util.PriorityQueue;
 
+// Find median
+// Time - O(n*log n)
+// Space - O(n)
 public class MedianFinder {
 	PriorityQueue<Integer> max = new PriorityQueue<Integer>(Collections.reverseOrder());
 	PriorityQueue<Integer> min = new PriorityQueue<Integer>();
