@@ -1,5 +1,7 @@
 package String;
 
+// String size is 3^k+1
+
 public class CycleLeaderIteration {
 	
 	// Time - O(n), Space - O(1)
@@ -38,7 +40,9 @@ public class CycleLeaderIteration {
 		 		int j = i;
 		 		char temp = str[j];
 		 		char temp1;
+		 		//System.out.println("i "+i);
 		 		while(!check[j]) {
+		 			//System.out.println("j "+j+" "+str[j]);
 		 			check[j] = true;
 		 			if(j%2==0) {
 		 				j = j/2;
@@ -54,7 +58,8 @@ public class CycleLeaderIteration {
 	    }
 	    
 	    public static void main(String args[]){
-	        String str = "1a2b3c4d5e6f7g8h9iAjBkClDmEn";
+	        //String str = "1a2b3c4d5e6f7g8h9iAjBkClDmEn";
+	    	  String str = "a1b2c3d4e5";
 	        System.out.println(str.length());
 	        char[] str1 = str.toCharArray();
 	        char[] str2 = str.toCharArray();
