@@ -2,6 +2,7 @@ package String;
 // http://www.geeksforgeeks.org/longest-palindrome-substring-set-1/
 
 // Time - O(n^2)
+// Space - O(n^2)
 public class LongestPalindromeSubString {
 	
 	static String getLongestPalindromeSubString(char[] input) {
