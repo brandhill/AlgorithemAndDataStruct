@@ -1,80 +1,69 @@
 package hackerrank.dynamic;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Set;
-import java.util.TreeSet;
+// http://www.geeksforgeeks.org/longest-monotonically-increasing-subsequence-size-n-log-n/
+// https://www.hackerrank.com/challenges/longest-increasing-subsequent
 
+// Time - O(n log n)
+// Space - O(n)
 public class LongestIncreasingSubsequence {
 	
-	static int LongestSubSequence(int[] input) {
+	// Binary Search
+	static int getIndex(int[] result,int start,int end,int key) {
+		
+		while(end>=start) {
+			//System.out.println(end+" "+start);
+			int index = ((end+start)/2);
+			if(result[index]<key) {
+				if(result[index+1]>key)
+					return index;
+				start = index+1;
+			}
+			else {
+				end = index-1;
+			}
+		}
+		
+		return end;
+	}
+	
+	static int LongestSubSequence1(int[] input) {
 		if(input.length<1) {
 			return 0;
 		}
-		List<index> list = new ArrayList<index>();
-		int maxLen = 1;
-		for (int i = 0; i < input.length; i++) {
-			int check = -1;
-			int len = 0;
-			/*for(int j = 0; j < list.size(); j++) {
-				System.out.println(list.get(j).num+" "+list.get(j).len);
+		
+		int[] result = new int[input.length];
+		int k = 1;
+		result[0] = input[0];
+		
+		for(int i = 1; i < input.length; i++) {
+			if(input[i]<result[0]) {
+				result[0] = input[i];
 			}
-			System.out.println("----");*/
-			for(int j = 0; j < list.size(); j++) {
-					index in = list.get(j);
-					if(in.num < input[i] && in.len > len) {
-						check = j;
-						len = in.len;
-					}
-			}
-			if(check==-1) {
-				index in = new index();
-				in.num = input[i];
-				in.len = 1;
-				list.add(in);
+			else if(input[i]>result[k-1]) {
+				result[k++] = input[i];
 			}
 			else {
-				index n = list.get(check);
-				n.num = input[i];
-				n.len++;
-				if(n.len > maxLen) {
-					maxLen = n.len;
-				}
+				result[getIndex(result, 0, k-1, input[i])+1] = input[i];
 			}
-			
+			//System.out.println(Arrays.toString(result));
 		}
-		
-		return maxLen;
+		return k; 
 	}
 	
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+		/*Scanner sc = new Scanner(System.in);
 		int size = sc.nextInt();
 		int[] array = new int[size];
 		for( int i = 0; i < size; i++) {
 			array[i] = sc.nextInt();
-		}
+		}*/
 		//int[] array =  { 15, 27, 14, 38, 26, 55, 46, 65, 85 };
 		//int[] array =  { 5,4,3,2,1 };
-		int result = LongestIncreasingSubsequence.LongestSubSequence(array);
+		//int[] array =  { 10,8,9,15,13,14,20,18,19 };
+		//int[] array = {0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15};
+		//int[] array = {7,9,12,13,14,15,18,20,8};
+		int[] array = {7,9,12,13,14,15,18,20,17};
+		int result = LongestIncreasingSubsequence.LongestSubSequence1(array);
 		System.out.println(result);
-	}
-}
-
-class index implements Comparable{
-	int num;
-	int len;
-	@Override
-	public int compareTo(Object o) {
-		index i = (index) o;
-		if(this.len > i.len) {
-			return -1;
-		}
-		else if(this.len < i.len) {
-			return 1;
-		}
-		return 0;
 	}
 }
