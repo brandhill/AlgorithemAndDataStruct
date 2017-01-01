@@ -4,7 +4,11 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-
+/**
+ * References
+ * https://leetcode.com/problems/minimum-window-substring/
+ * http://www.geeksforgeeks.org/find-the-smallest-window-in-a-string-containing-all-characters-of-another-string/
+ */
 public class SmallestWindowContaingAllCharacters {
 	
 	public String minWindow(String s, String t) {
