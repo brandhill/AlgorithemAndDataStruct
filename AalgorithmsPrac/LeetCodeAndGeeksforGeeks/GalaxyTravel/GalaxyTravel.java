@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+// https://www.hackerrank.com/contests/5800-f16-galaxy-trek/challenges
 
 public class GalaxyTravel {
 	
