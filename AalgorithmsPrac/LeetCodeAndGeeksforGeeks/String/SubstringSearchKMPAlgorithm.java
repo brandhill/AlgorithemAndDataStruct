@@ -2,6 +2,12 @@ package String;
 
 import java.util.Arrays;
 
+// Find the given pattern in the string
+
+// m - size of pattern , n - size of string
+// O(m+n)
+// O(m)
+
 public class SubstringSearchKMPAlgorithm {
 	
 	static int SearchPattern(char[] string, char[] pattern) {
