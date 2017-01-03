@@ -1,5 +1,7 @@
 package DynamicProgramming;
 
+import java.util.Arrays;
+
 public class MoveToIndexInGrid2 {
 	
 	static int moveTo(int X,int Y,int[][] map) {
@@ -18,8 +20,10 @@ public class MoveToIndexInGrid2 {
 	
 	public static void main(String[] args) {
 		int[][] map = {{-1,-1,-1,-1,-1},{-1,-1,-1,-1,-1},{-1,-1,-1,-1,-1},{-1,-1,-1,-1,-1},{-1,-1,-1,-1,-1}};
-		//System.out.println(map[2][2]);
 		int i = MoveToIndexInGrid2.moveTo(4, 4, map);
+		/*for(int[] a: map) {
+			System.out.println(Arrays.toString(a));
+		}*/
 		System.out.println(i);
 	}
 }

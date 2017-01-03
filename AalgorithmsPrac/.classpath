@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="OtherSrc"/>
+	<classpathentry kind="src" path="CrackingInterviewQuestionsTextBook"/>
 	<classpathentry kind="src" path="File"/>
 	<classpathentry kind="src" path="LeetCodeAndGeeksforGeeks"/>
 	<classpathentry kind="src" path="Amazon"/>
