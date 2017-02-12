@@ -9,8 +9,7 @@ public class FindIsland {
 			for ( int j =0; j< island[0].length; j++) {
 				if(island[i][j]==1 && !lookUp[i][j]) {
 					lookUp[i][j] = true;
-					lookUp = findConnectors(island,i,j,lookUp);
-					//System.out.println();
+					findConnectors(island,i,j,lookUp);
 					count++;
 				}
 			}
@@ -18,7 +17,7 @@ public class FindIsland {
 		return count;
 	}
 	
-	static boolean[][] findConnectors(int[][] island,int i,int j, boolean[][] lookUp) {
+	static void findConnectors(int[][] island,int i,int j, boolean[][] lookUp) {
 		int rowStart,colStart,rowEnd,colEnd;
 		//System.out.print("("+i+","+j+")"+" ");
 		rowStart = Math.max(i-1, 0);
@@ -33,10 +32,9 @@ public class FindIsland {
 				}
 			}
 		}
-		return lookUp;
 	}
 	public static void main(String[] args) {
-		int[][] island = {{0,0,0,1,0},{0,1,0,0,1},{1,0,1,0,0},{0,0,0,0,1},{1,1,0,0,0}};
+		int[][] island = {{0,0,0,1,0},{0,1,0,0,1},{1,0,1,0,0},{0,0,0,0,1},{1,0,1,0,0}};
 		System.out.println(FindIsland.findIslands(island));
 	}
 }

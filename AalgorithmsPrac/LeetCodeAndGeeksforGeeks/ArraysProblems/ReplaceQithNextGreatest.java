@@ -18,7 +18,7 @@ public class ReplaceQithNextGreatest {
 	}
 	
 	public static void main(String[] args) {
-		int[] input = {16, 17, 4, 3, 5, 2};
+		int[] input = {16, 17, 4, 6, 5, 2};
 		ReplaceQithNextGreatest.NextGreatest(input);
 	}
 }

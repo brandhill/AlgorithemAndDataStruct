@@ -31,9 +31,7 @@ public class DijkstrasAlgorithem {
 		for(int i = 0; i < connections; i++) {
 					matrix[sc.nextInt()][sc.nextInt()] = sc.nextInt();
 		}
-		
 		// Actual Alogoritem starts 
-		
 		// Initilizing the values for start node
 		int nextNode = start;
 		dist[nextNode] = 0;
@@ -69,7 +67,6 @@ public class DijkstrasAlgorithem {
 			nextNode = node;
 			visited.add(nextNode);
 		}
-		
 		
 		int exit = end;
 		Stack<Integer> stack = new Stack<Integer>();
