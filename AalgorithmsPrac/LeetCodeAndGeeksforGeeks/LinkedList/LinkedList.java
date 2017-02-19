@@ -50,6 +50,15 @@ Link firstlink;
 		}
 	}
 	
+	public Link createLinkedList(int[] arr) {
+		this.firstlink = new Link(arr[0]);
+		Link n = firstlink;
+		for(int i = 1; i < arr.length; i++) {
+			n.next = new Link(arr[i]);
+			n = n.next;
+		}
+		return this.firstlink;
+	}
 
 	
 

@@ -9,7 +9,6 @@ import java.util.Stack;
 public class AddNumberRepresentedByLinkList {
 	
 	 static LinkedList addLinkedListNumbers(LinkedList list1, LinkedList list2) {
-		LinkedList result = new LinkedList();
 		Stack<Link> stack1 = new Stack<Link>();
 		Stack<Link> stack2 = new Stack<Link>();
 		Link node1 = list1.firstlink;
@@ -77,6 +76,7 @@ public class AddNumberRepresentedByLinkList {
 		list2.insert(2);
 		list2.insert(4);
 		list2.insert(8);
+		list2.insert(9);
 //		list1.insert(9);
 //		list1.insert(9);
 //		list1.insert(9);
