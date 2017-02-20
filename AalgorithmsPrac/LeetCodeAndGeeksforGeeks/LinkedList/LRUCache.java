@@ -3,6 +3,8 @@ package LinkedList;
 import java.util.HashMap;
 import java.util.Map;
 
+// http://www.geeksforgeeks.org/implement-lru-cache/
+
 public class LRUCache {
 	private Link2 frontEnd;
 	private Link2 backEnd;
