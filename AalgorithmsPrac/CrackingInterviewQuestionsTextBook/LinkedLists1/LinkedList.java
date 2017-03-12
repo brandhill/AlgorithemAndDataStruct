@@ -2,7 +2,7 @@ package LinkedLists1;
 
 public class LinkedList {
 Link firstlink;
-	LinkedList()
+	public LinkedList()
 	{
 		firstlink = null;
 	}
