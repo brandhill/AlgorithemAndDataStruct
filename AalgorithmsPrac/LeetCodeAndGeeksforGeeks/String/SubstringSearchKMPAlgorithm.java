@@ -15,6 +15,7 @@ public class SubstringSearchKMPAlgorithm {
 		
 		int[] indexs = new int[pattern.length];
 		fillIndexs(pattern,indexs);
+		System.out.println(Arrays.toString(indexs));
 		int j = 0;
 		int i = 0;
 		while(i<string.length) {

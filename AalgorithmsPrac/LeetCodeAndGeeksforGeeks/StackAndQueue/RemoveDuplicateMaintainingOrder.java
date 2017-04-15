@@ -103,9 +103,9 @@ public class RemoveDuplicateMaintainingOrder {
 	
 	public static void main(String args[]) {
         RemoveDuplicateMaintainingOrder rm = new RemoveDuplicateMaintainingOrder();
-        //System.out.println(rm.removeDuplicateLetters("cbabdccbdc"));
+        System.out.println(rm.removeDuplicateLetters("cbabdccbdc"));
         //System.out.println(rm.removeDuplicateLetters("ccbdbba"));
-        System.out.println(rm.removeDuplicateLetters("bcabc"));
+        //System.out.println(rm.removeDuplicateLetters("bcabc"));
         
         
     }

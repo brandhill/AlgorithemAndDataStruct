@@ -21,10 +21,10 @@ public class ReachTopOfStairs1 {
 	}
 	
 	public static void main(String[] args) {
-		int[] map = new int[5];
+		int[] map = new int[21];
 		Arrays.fill(map, -1);
 		//System.out.println(map[0]);
-		int i = ReachTopOfStairs1.NoOfWays(4, map);
+		int i = ReachTopOfStairs1.NoOfWays(20, map);
 		System.out.println(i);
 	}
 }

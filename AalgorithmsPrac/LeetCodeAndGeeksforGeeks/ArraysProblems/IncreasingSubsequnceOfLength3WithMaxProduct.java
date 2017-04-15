@@ -39,9 +39,10 @@ public class IncreasingSubsequnceOfLength3WithMaxProduct {
 				}
 			}
 			LmaxIndex[current] = in;
+			System.out.println(Arrays.toString(LmaxIndex));
 			//Lmax[current] = (in==-1)?-1:input[in]; 
 		}
-		
+		System.out.println(Arrays.toString(LmaxIndex));
 		//int prev = 0;
 		/*for(int i = 1; i < input.length; i++) {
 			//int index = i-1;
@@ -74,6 +75,8 @@ public class IncreasingSubsequnceOfLength3WithMaxProduct {
         System.out.println(iss.maxProduct(arr));
         int arr1[] = {1, 5, 9, 10,7,8,11,12, 9};
         System.out.println(iss.maxProduct(arr1));
+        int arr2[] = {5,4,1,2,3};
+        System.out.println(iss.maxProduct(arr2));
     }
 }
 
