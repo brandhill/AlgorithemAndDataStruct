@@ -16,7 +16,7 @@ import java.util.TreeMap;
 //Strive to keep jobs with the same type in the same batch. Also strive to achieve batch sizes that
 //approach K.
 
-
+// Incomplete
 public class DivideNJobsIntoKGroups {
 	
 	private class JobTypeTracking {
