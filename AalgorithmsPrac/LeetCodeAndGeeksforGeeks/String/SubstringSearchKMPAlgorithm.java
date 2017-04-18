@@ -64,9 +64,9 @@ public class SubstringSearchKMPAlgorithm {
 	public static void main(String[] args) {
 		//char[] string = "aaxaabaasdasaabaabaaa".toCharArray();
 		//char[] pattern = "aabaabaaa".toCharArray();
-		char[] string = "abxabcabcaby".toCharArray();
-		char[] pattern = "abcaby".toCharArray();
+		char[] string = "aabaaa".toCharArray();
+		char[] pattern = "aaa".toCharArray();
 		int index = SubstringSearchKMPAlgorithm.SearchPattern(string, pattern);
-		System.out.println(index+" "+"abxabcabcaby".substring(index));
+		System.out.println(index+" "+"aabaaa".substring(index));
 	}
 }

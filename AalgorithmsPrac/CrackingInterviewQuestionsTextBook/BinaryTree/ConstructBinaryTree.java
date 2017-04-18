@@ -5,18 +5,18 @@ import java.util.List;
 
 public class ConstructBinaryTree {
 	BalanceBinaryTree Btree;
-	ConstructBinaryTree(){
+	public ConstructBinaryTree(){
 		Btree = new BalanceBinaryTree();
 	}
 	int count =1;
-	Node PreInorders(List<Node> preorder,List<Node> inorder, int inorderStart, int inorderEnd, int preorderStart, int preorderEnd){
+	public Node PreInorders(List<Node> preorder,List<Node> inorder, int inorderStart, int inorderEnd, int preorderStart, int preorderEnd){
 		Node n = null;
 		if(inorderStart > inorderEnd && preorderStart > preorderEnd){
 			return n;
 		}
 		n = preorder.get(preorderStart);
 		int index = inorder.indexOf(n);
-		System.out.println(n.id);
+//		System.out.println(n.id);
 		n.left = PreInorders(preorder,inorder,inorderStart,index-1,preorderStart+1,preorderStart+(index-inorderStart));
 		n.right = PreInorders(preorder,inorder,index+1,inorderEnd,preorderStart+(index-inorderStart)+1,preorderEnd);
 		return n;

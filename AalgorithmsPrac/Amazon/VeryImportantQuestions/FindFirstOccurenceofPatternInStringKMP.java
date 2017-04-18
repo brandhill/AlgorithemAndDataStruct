@@ -1,6 +1,8 @@
 package VeryImportantQuestions;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class FindFirstOccurenceofPatternInStringKMP {
 	
@@ -43,25 +45,56 @@ public class FindFirstOccurenceofPatternInStringKMP {
 		while(i<string.length) {
 //			System.out.println(i+" "+j);
 			if(string[i]==pattern[j]) {
-				while(i < string.length && j < pattern.length) {
-					if(string[i]!=pattern[j]) {
-						j = indexs[j-1];
-						break;
-					}
-					i++;
-					j++;
-				}
-				if(j==pattern.length) {
-					return i-pattern.length;
-				}
-			}
-			else 
 				i++;
-		}
+				j++;
+			}
+			else if(j==0) {
+				i++;
+			} else {
+				j = indexs[j-1];
+			}
 		
+			if(j==pattern.length) {
+				return i-pattern.length;
+			}
+		}
 		return -1;
 	}
 	
+	
+	static List<Integer> findAllPatternsKMP(char[] string, char[] pattern) {
+		
+		int[] indexs = new int[pattern.length];
+		List<Integer> list = new ArrayList<Integer>();
+		fillIndexs(indexs,pattern);
+		int start = 0;
+		int end = 0;
+		int j = 0;
+		while(end<string.length) {
+			System.out.println("Start "+start+", End "+end);
+			if(string[end]==pattern[j]) {
+				if(j==pattern.length-1) {
+					list.add(start);
+					j = indexs[j];
+					end++;
+					start = end - j;
+				} 
+				else {
+					end++;
+					j++;
+				}
+			} else if(j==0) {
+				end++;
+				start++;
+			}	else {
+				j = indexs[j-1];
+				start = end - j;
+			} 
+			
+		}
+		
+		return list;
+	}
 	static void fillIndexs(int[] indexs, char[] pattern) {
 		indexs[0] = 0;
 		for(int i = 1; i< pattern.length; i++) {
@@ -76,8 +109,14 @@ public class FindFirstOccurenceofPatternInStringKMP {
 	}
 	
 	public static void main(String[] args) {
-		char[] string = "abxabcabcaby".toCharArray();
-		char[] pattern = "abcabya".toCharArray();
-		System.out.println(findPatternKMP(string, pattern));
+		char[] string = "aabaaa".toCharArray();
+		char[] pattern = "aaa".toCharArray();
+		System.out.println(findAllPatternsKMP(string, pattern));
+		char[] string1 = "ababcababcabc".toCharArray();
+		char[] pattern1 = "abcab".toCharArray();
+		System.out.println(findAllPatternsKMP(string1, pattern1));
+		char[] string2 = "aaaaaa".toCharArray();
+		char[] pattern2 = "aaaa".toCharArray();
+		System.out.println(findAllPatternsKMP(string2, pattern2));
 	}
 }
