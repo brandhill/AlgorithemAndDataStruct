@@ -15,7 +15,12 @@ public class LongestPalindromeSubsequence {
 		pointer p = new pointer();
 		p.max = 1;
 		lpsHelper(input,table,0,input.length()-1,p);
-		
+		for(int i =0; i< table.length; i++) {
+			for(int j=0; j< table[0].length; j++) {
+				System.out.print(table[i][j]);
+			}
+			System.out.println();
+		}
 		return p.max;
 	}
 	

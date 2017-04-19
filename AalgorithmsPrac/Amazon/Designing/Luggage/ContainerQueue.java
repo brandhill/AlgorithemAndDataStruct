@@ -1,16 +1,19 @@
 package Designing.Luggage;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ContainerQueue<T extends Luggage> {
 	Container container;
-	Set<T> set;
+	List<T> list;
 	
 	public ContainerQueue(Container container) {
 		this.container = container;
-		set = new HashSet<T>();
+		list = new ArrayList<T>();
 	}
-
+	
+	boolean addLuggage(T luggage) {
+		return list.add(luggage);
+	}
 }
 
