@@ -8,10 +8,12 @@ public class Game {
 	Game(String player1, String player2) {
 		p1 = new Player(player1,Symbol.O);
 		p2 = new Player(player2,Symbol.X);
+		p1.currentGame = this;
+		p2.currentGame = this;
 		board = new Symbol[size][size];
 	}
 	
-	boolean checkIfSelectionIsValid(int x, int y) {
+	 boolean checkIfSelectionIsValid(int x, int y) {
 		if(x<0 || x>=size || y<0 || y>=size)
 			return false;
 		if(board[x][y]!=null)
@@ -21,6 +23,8 @@ public class Game {
 	}
 	
 	boolean selectGrid(Player p, int x, int y) {
+		if(!checkIfSelectionIsValid(x, y))
+			return false;
 		board[x][y] = p.symbol;
 		return checkIfWon(p,x,y);
 	}
