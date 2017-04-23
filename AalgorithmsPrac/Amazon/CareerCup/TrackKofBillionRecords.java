@@ -38,6 +38,9 @@ public class TrackKofBillionRecords {
 			if(peek.count<r.count) {
 				topKRecords.poll();
 				topKRecords.offer(r);
+			} else {
+				Record r1 = topKRecords.poll();
+				topKRecords.offer(r1);
 			}
 			System.out.println(topKRecords.peek().id +" "+topKRecords.peek().count);
 		} else {

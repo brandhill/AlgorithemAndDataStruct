@@ -1,4 +1,4 @@
-package VeryImportantQuestions;
+package StandardAlgorithems;
 
 import java.util.ArrayList;
 import java.util.Arrays;

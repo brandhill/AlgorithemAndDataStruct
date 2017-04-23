@@ -8,5 +8,5 @@ public class Scientist {
 	
 	void addQuery(Query query) {
 		
-	}
+	}	
 }

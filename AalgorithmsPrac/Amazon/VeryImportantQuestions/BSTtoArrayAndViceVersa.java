@@ -10,7 +10,7 @@ import BinaryTree.Node;
 
 public class BSTtoArrayAndViceVersa {
 	
-	static Node sortedArrayTOBST(int[] array) {
+	public static Node sortedArrayTOBST(int[] array) {
 		
 		if(array.length==0)
 			return null;
@@ -25,7 +25,8 @@ public class BSTtoArrayAndViceVersa {
 		Node root = new Node(array[mid]);
 		root.left = findMaxSumOfSubArrayHelper(array,low,mid-1);
 		root.right = findMaxSumOfSubArrayHelper(array, mid+1, high);
-		
+		System.out.println("  "+root+"  ");
+		System.out.println(root.left+"  "+root.right);
 		return root;
 	}
 	
@@ -45,7 +46,7 @@ public class BSTtoArrayAndViceVersa {
 	}
 	
 	public static void main(String[] args) {
-		int[] array = {0,1,2,3,4,5,6,7};
+		int[] array = {-1,0,1,2,3,4,5,6,7};
 		Node n = sortedArrayTOBST(array);
 		System.out.println(BSTtoSortedArray(n));
 	}
