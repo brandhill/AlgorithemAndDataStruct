@@ -10,18 +10,18 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class TrieDataStruture {
 	
-	class Trie {
+	public class Trie {
 		Map<Character,Trie> map = new ConcurrentHashMap<Character,Trie>();
 		boolean end;
 	}
 	
 	Trie root;
 	
-	TrieDataStruture() {
+	public TrieDataStruture() {
 		root = null;
 	}
 	
-	void insertWord(String word) {
+	public void insertWord(String word) {
 		char[] input = word.toCharArray();
 		if(root==null) {
 			root = new Trie();

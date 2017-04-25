@@ -65,5 +65,6 @@ public class RotateMatrix {
 		rotatematrix(matrix);
 		System.out.println("---------");
 		printMatrix(matrix);
+
 	}
 }

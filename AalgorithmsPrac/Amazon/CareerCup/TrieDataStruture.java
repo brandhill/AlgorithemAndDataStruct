@@ -17,7 +17,7 @@ public class TrieDataStruture {
 	
 	Trie root;
 	
-	TrieDataStruture() {
+	public TrieDataStruture() {
 		root = null;
 	}
 	

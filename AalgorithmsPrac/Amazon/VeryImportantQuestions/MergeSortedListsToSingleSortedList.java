@@ -1,8 +1,10 @@
 package VeryImportantQuestions;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Queue;
+import java.util.LinkedList;
 
 public class MergeSortedListsToSingleSortedList {
 	
@@ -39,6 +41,35 @@ public class MergeSortedListsToSingleSortedList {
 	
 	
 	
+	// for stream of inputs
+	public static List<Integer> mergeLists(List<Queue<Integer>> streams) {
+		Queue<StremValue> minHeap = getHeap(streams);
+		List<Integer> output = new ArrayList<Integer>();
+		while(!minHeap.isEmpty()) {
+			StremValue min = minHeap.poll();
+			output.add(min.value);
+			if(!min.stream.isEmpty()) {
+				min.value = min.stream.poll();
+				minHeap.add(min);
+			}
+		}
+		return output;
+	}
+	
+	private static Queue<StremValue> getHeap(List<Queue<Integer>> streams) {
+		List<StremValue> combinedStream = new ArrayList<StremValue>();
+		for(int i=0; i< streams.size(); i++) {
+			Queue<Integer> queue = streams.get(i);
+			while(!queue.isEmpty()) {
+				int n = queue.poll();
+				combinedStream.add(new StremValue(n, streams.get(i)));
+			}
+		}
+		Queue<StremValue> minHeap = new PriorityQueue<StremValue>(combinedStream);
+		return minHeap;
+	}
+	
+	
 	
 	public static void main(String[] args) {
 		List<Integer> list1 = new ArrayList<Integer>();
@@ -59,5 +90,43 @@ public class MergeSortedListsToSingleSortedList {
 		lists.add(list3);
 		lists.add(list4);
 		System.out.println(MergeLists(lists));
+		Queue<Integer> stream1 = new LinkedList<Integer>(list1);
+		Queue<Integer> stream2 = new LinkedList<Integer>(list2);
+		Queue<Integer> stream3 = new LinkedList<Integer>(list3);
+		Queue<Integer> stream4 = new LinkedList<Integer>(list4);
+		List<Queue<Integer>> streams = new ArrayList<Queue<Integer>>();
+		streams.add(stream1);
+		streams.add(stream2);
+		streams.add(stream3);
+		streams.add(stream4);
+		System.out.println(mergeLists(streams));
 	}
+}
+
+
+
+class StremValue implements Comparable<StremValue>{
+	int value;
+	Queue<Integer> stream;
+	
+	StremValue(int value, Queue<Integer> stream) {
+		this.value = value;
+		this.stream = stream;
+	}
+
+	@Override
+	public int compareTo(StremValue o) {
+		if(this.value>o.value)
+			return 1;
+		else if(this.value<o.value)
+			return -1;
+		return 0;
+	}
+
+	@Override
+	public String toString() {
+		return "StremValue [value=" + value + "]";
+	}
+	
+	
 }
