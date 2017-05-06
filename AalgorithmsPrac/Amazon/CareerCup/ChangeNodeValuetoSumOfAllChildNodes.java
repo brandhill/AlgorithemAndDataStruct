@@ -102,9 +102,9 @@ public class ChangeNodeValuetoSumOfAllChildNodes {
 		n7.left = n8;
 		n8.right = n9;
 		n9.left = n10;
-		changeNodeValues(n);
+//		changeNodeValues(n);
 		System.out.println("----");
-//		changeNodValuesUsingMap(n);
+		changeNodValuesUsingMap(n);
 		
 	}
 }

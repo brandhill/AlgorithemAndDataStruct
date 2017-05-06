@@ -12,10 +12,10 @@ public class ClimbMaxStairs {
 				return totalSum-1;
 			}
 			else if(sum>brokenStep)
-				return totalSum;
+				break;
 		}
 		
-		return -1;
+		return totalSum;
 	}
 	
 	public static void main(String[] args) {

@@ -30,19 +30,23 @@ public class StringPermutations {
 	static Set<String> getPermutationsRecursively(String input) {
 		char[] chars = input.toCharArray();
 		Set<String> output = new HashSet<String>();
-		getPermutationsRecursivelyHelper(chars,0,input.length()-1,output);
+		count n = new count();
+		n.i = 0;
+		getPermutationsRecursivelyHelper(chars,0,input.length()-1,output,n);
+		System.out.println("COunt "+n.i);
 		return output;
 	}
 	
-	private static void getPermutationsRecursivelyHelper(char[] input, int start, int end, Set<String> output) {
+	private static void getPermutationsRecursivelyHelper(char[] input, int start, int end, Set<String> output, count n) {
 
 		output.add(String.valueOf(input));
 		for(int j = start; j < end; j++) {
 		for(int i=j+1; i <=end; i++) {
 			if(input[j]==input[i])
 				continue;
+			n.i += 1;
 			swap(input,j,i);
-			getPermutationsRecursivelyHelper(input,j+1,end,output);
+			getPermutationsRecursivelyHelper(input,j+1,end,output,n);
 			swap(input,j,i);
 			}
 		}
@@ -54,6 +58,7 @@ public class StringPermutations {
 		count n = new count();
 		n.i = 0;
 		getPermutationsRecursivelyHelper1(chars,0,input.length()-1,output,n);
+		System.out.println("COunt "+n.i);
 		return output;
 	}
 	
@@ -61,9 +66,11 @@ public class StringPermutations {
 
 		output.add(String.valueOf(input));
 		for(int i = start; i <= end; i++) {
+			if(input[start]==input[end])
+				continue;
 			swap(input,start,i);
 			n.i += 1;
-			System.out.println(String.valueOf(input)+" "+ n.i);
+//			System.out.println(String.valueOf(input)+" "+ n.i);
 			getPermutationsRecursivelyHelper1(input,start+1,end,output,n);
 			swap(input,start,i);
 			}
@@ -75,11 +82,12 @@ public class StringPermutations {
 		input[index2] = temp;
 	}
 	public static void main(String[] args) {
-		System.out.println(getPermutationsRecursively1("abcda").size());
-		System.out.println(getPermutationsRecursively("abcda").size());
-		System.out.println(getPermutations("abcda").size());
+		System.out.println(getPermutationsRecursively1("abcde").size());
+		System.out.println(getPermutationsRecursively("abcde").size());
+		System.out.println(getPermutations("abcde").size());
 	}
 }
+
 
 class count {
 	int i;

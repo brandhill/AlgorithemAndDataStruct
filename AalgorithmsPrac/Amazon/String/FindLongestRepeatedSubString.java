@@ -22,7 +22,7 @@ public class FindLongestRepeatedSubString {
 
 		for (int i = 0; i < s.length(); i++) {
 
-		stringIndicies.add(i);
+			stringIndicies.add(i);
 
 		}
 
@@ -32,40 +32,22 @@ public class FindLongestRepeatedSubString {
 
 		public int compare(Integer a, Integer b) {
 
-		for (int i = 0; i + a < s.length() && i + b < s.length();
-
-		i++) {
-
-		if (s.charAt(i + a) != s.charAt(i + b))
-
-		return (int)s.charAt(i + a) - (int)s.charAt(i +
-
-		b);
-
-		}
-
-		return 0;
-
+		for (int i = 0; i + a < s.length() && i + b < s.length(); i++) {
+			if (s.charAt(i + a) != s.charAt(i + b))
+				return (int)s.charAt(i + a) - (int)s.charAt(i + b);
+			}
+			return 0;
 		}
 
 		});
-		
 		System.out.println(stringIndicies);
-		
 		for (int i = 1; i < s.length(); i++) {
-
 		int com = CompareSubstring(s.toCharArray(), stringIndicies.get(i),
-
 		stringIndicies.get(i - 1));
-
 		if (com > max) {
-
-		max = com;
-
-		maxCommon = s.substring(stringIndicies.get(i),
-
-		stringIndicies.get(i) + max);
-
+			max = com;
+			maxCommon = s.substring(stringIndicies.get(i),
+			stringIndicies.get(i) + max);
 		}
 		}
 

@@ -9,11 +9,8 @@ public class AsciiToInteger {
 	int result = 0;
 	for(int i = 0; i < str.length();i++)
 	{
-		System.out.println("Before "+result);
-		System.out.println((int)str.charAt(i)+" "+(int) '0');
 	result*= 10;
 	result+= str.charAt(i)-'0';
-	System.out.println("After "+result);
 	}
 	return result;
 	}
@@ -22,9 +19,7 @@ public class AsciiToInteger {
 	StringBuilder sb = new StringBuilder();
 	while(i != 0)
 	{
-	char c =  (char) (48+(i%10));
-	System.out.println((48+(i%10)));
-	System.out.println(c);
+	char c =  (char) ('0'+(i%10));
 	sb.insert(0,c);
 	i/= 10;
 	}
@@ -32,10 +27,8 @@ public class AsciiToInteger {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(asciiToInt("abcd"));
-		System.out.println(intToAscii(54562));
-		char c = (char) 97;
-		System.out.println(c);
+		System.out.println(asciiToInt("1234"));
+		System.out.println(intToAscii(1234));
 	}
 	
 }

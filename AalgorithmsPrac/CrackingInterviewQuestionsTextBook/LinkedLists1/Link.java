@@ -1,9 +1,9 @@
 package LinkedLists1;
 
 public class Link {
- int id;
- Link next;
- Link(int id){
+ public int id;
+ public Link next;
+ public Link(int id){
 	 this.id = id;
  }
  public void display(){

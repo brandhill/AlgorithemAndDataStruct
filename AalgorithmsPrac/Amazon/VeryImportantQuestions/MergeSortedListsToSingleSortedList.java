@@ -24,16 +24,13 @@ public class MergeSortedListsToSingleSortedList {
 				if(indexTracker[i]==list.size()) {
 					continue;
 				}
-//				System.out.println(list.get(indexTracker[i])+" "+value);
 				if(list.get(indexTracker[i])<value) {
-//					System.out.println(true);
 					value = list.get(indexTracker[i]);
 					listIndex = i;
 				}
 			}
 				output.add(value);
 				indexTracker[listIndex] += 1; 
-//				System.out.println(Arrays.toString(indexTracker));
 		}
 		
 		return output;

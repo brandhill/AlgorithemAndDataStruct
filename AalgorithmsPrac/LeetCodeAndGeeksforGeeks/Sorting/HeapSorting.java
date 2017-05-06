@@ -99,7 +99,7 @@ public class HeapSorting {
 		}
 	}*/
 	
-	private void shiftDown(int p){
+	private void shiftDown(int p) {
 		while((2*p +1) < list.size()) {
 			// left and right indexs of Parent 'p'
 			int leftIndex = 2*p +1;
@@ -108,9 +108,7 @@ public class HeapSorting {
 			int left = list.get(leftIndex);
 			// if rightIndex is greater than list size, assign min value to right
 			int right = rightIndex < list.size()?list.get(rightIndex):Integer.MIN_VALUE;
-			
 			int maxIndex = left > right?leftIndex:rightIndex;
-			
 			if(list.get(maxIndex) > list.get(p)) {
 				swap(maxIndex,p);
 				p = maxIndex;
@@ -140,7 +138,6 @@ public class HeapSorting {
 		 heap.Delete(10);
 		 heap.printHeap();
 	}
-	
 }
 
 /*

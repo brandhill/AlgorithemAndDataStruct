@@ -25,8 +25,8 @@ public class BSTtoArrayAndViceVersa {
 		Node root = new Node(array[mid]);
 		root.left = findMaxSumOfSubArrayHelper(array,low,mid-1);
 		root.right = findMaxSumOfSubArrayHelper(array, mid+1, high);
-		System.out.println("  "+root+"  ");
-		System.out.println(root.left+"  "+root.right);
+//		System.out.println("  "+root+"  ");
+//		System.out.println(root.left+"  "+root.right);
 		return root;
 	}
 	

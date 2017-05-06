@@ -15,8 +15,8 @@ public class WeighingBalls {
 	}
 	
 	private static int ScaleBy3(int[] balls,int start, int end) {
-		if((end-start+1)/3==1) {
-			return Scale(balls, start, end);
+		if(start==end) {
+			return start;
 		}
 		
 		int n = (end-start+1)/3;
@@ -27,7 +27,7 @@ public class WeighingBalls {
 		} else if(x==1) {
 			return ScaleBy3(balls, start+n, start+2*n-1);
 		}
-		start += 2*n; 
+		start += 2*n;
 		
 		return ScaleBy3(balls, start, end);
 	}
@@ -88,5 +88,6 @@ public class WeighingBalls {
 	public static void main(String[] args) {
 		int[] balls = {1,1,1,1,1,1,1,1,1,1,2,1,1,1,1};
 		System.out.println(FindOddBall(balls));
+//		System.out.println(Scale(balls));
 	}
 }

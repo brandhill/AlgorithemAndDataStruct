@@ -78,6 +78,60 @@ public class BinaryTreeToMemoryAndRetriveBack {
 		return head;
 	}
 	
+	static Node3 ConvertFromMemoryToTree1(List<Integer> list) {
+		
+		Node3 node = null;
+		if(list.size()==0 || list.get(0)==null)
+			return node;
+		node = new Node3(list.get(0));
+		Queue<Node3> queue = new LinkedList<Node3>();
+		queue.offer(node);
+		int i = 1;
+		while(!queue.isEmpty() && i<list.size()) {
+			Node3 n = queue.poll();
+			Integer left = list.get(i);
+			if(left!=null) {
+				n.left = new Node3(left);
+				queue.offer(n.left);
+			} 
+			if(i+1<list.size()) {
+				Integer right = list.get(i+1);
+				if(right!=null) {
+					n.right = new Node3(right);
+					queue.offer(n.right);
+				}
+			}
+			i += 2;
+		}
+		
+		return node;
+	}
+	
+	static List<Integer> ConvertTreeToMemory1(Node3 node) {
+		List<Integer> list = new ArrayList<Integer>();
+		if(node==null)
+			return list;
+		Queue<Node3> queue = new LinkedList<Node3>();
+		queue.offer(node);
+		list.add(node.value);
+		while(!queue.isEmpty()) {
+			Node3 n = queue.poll();
+			Integer left = null;
+			if(n.left!=null) {
+				left = n.left.value;
+				queue.offer(n.left);
+			}
+			list.add(left);
+			Integer right = null;
+			if(n.right!=null) {
+				right = n.right.value;
+				queue.offer(n.right);
+			}
+			list.add(right);
+		}
+		
+		return list;
+	}
 	
 	public static void main(String[] args) {
 		int[] arr = {3,5,6,1,4,6,3,4,-1};
@@ -103,7 +157,7 @@ public class BinaryTreeToMemoryAndRetriveBack {
 		ConvertTreeToMemory(N);
 	}
 }
-
+// 3 5 6 1 4 6 3 4 -1 
 
 class Node3 {
 	int value;

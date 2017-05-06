@@ -8,6 +8,28 @@ package VeryImportantQuestions;
 
 public class GetOpitimizedGridToStoreNElements {
 	
+	
+	static solution GetOptimizedGrid1(int n) {
+		solution s = new solution();
+		
+		int x = (int) Math.sqrt(n);
+		int y = x;
+		int val = x*y;
+		while(!((val)>=n && (val)<=2+n)) {
+			if((val)<(n+2)) {
+				y++;
+				val = x*y;
+			}
+			else if((val)>(n+2)) {
+				x--;
+				val = x*y;
+			}
+		}
+		s.x = x;
+		s.y = y;
+		return s;
+	}
+	
 	static solution GetOptimizedGrid(int n) {
 		solution s = new solution();
 		int i =1;
@@ -25,7 +47,7 @@ public class GetOpitimizedGridToStoreNElements {
 			else if(m>n) {
 				int j = i;
 				while(Math.addExact(m, -1*n)>2) {
-					j -= 1; 
+					j -= 1;
 					m = i*j;
 				}
 				while(Math.addExact(m, -1*n)<0) {
@@ -43,7 +65,7 @@ public class GetOpitimizedGridToStoreNElements {
 	}
 	
 	public static void main(String[] args) {
-		solution s = GetOptimizedGrid(18);
+		solution s = GetOptimizedGrid1(31);
 		System.out.println(s.x+" "+s.y+" "+s.emptySpaces);
 	}
 }

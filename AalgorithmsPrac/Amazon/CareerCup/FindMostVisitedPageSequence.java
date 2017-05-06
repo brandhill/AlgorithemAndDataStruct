@@ -20,7 +20,6 @@ public class FindMostVisitedPageSequence {
 		Map<String, Integer> map = new HashMap<String, Integer>();
 		
 		for(List<Character> page: user) {
-			int hashValue = 0;
 			for(int i=0; i<=page.size()-k; i++) {
 					String s = convertToString(page,i,i+k);
 					if(map.containsKey(s)) {

@@ -30,7 +30,9 @@ public class FindCommenSubstrinBetweenTwoStrings {
 				else {
 					track[i][j] = 0;
 				}
+				System.out.print(track[i][j]+" ");
 			}
+			System.out.println();
 		}
 		
 		return s1.substring(endIndex-len+1,endIndex+1);
@@ -38,6 +40,6 @@ public class FindCommenSubstrinBetweenTwoStrings {
 	}
 		
 	public static void main(String[] args) {
-		System.out.println(findCommenSubstring("abcabb","abcabcabb"));
+		System.out.println(findCommenSubstring("ababbaa","abcabcabbcd"));
 	}
 }

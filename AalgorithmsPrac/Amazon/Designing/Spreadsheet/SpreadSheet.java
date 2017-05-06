@@ -5,7 +5,7 @@ import java.util.List;
 
 public class SpreadSheet {
 	
-	List<List<Cell>> cells; 
+	List<List<Cell>> cells;
 	
 	SpreadSheet() {
 		cells = new ArrayList<List<Cell>>(50);
@@ -24,7 +24,7 @@ public class SpreadSheet {
 		if(cell==null) {
 			cell = new Cell();
 			cell.sheet = this;
-			rows.add(column, cell);
+			rows.set(column, cell);
 		}
 		if(value.charAt(0)=='=') {
 			return EvaluateNumbers(value,cell);

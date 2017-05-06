@@ -1,5 +1,7 @@
 package CareerCup;
 
+import static org.hamcrest.CoreMatchers.instanceOf;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -16,22 +18,31 @@ public class PopulateInorderSuccessor {
 		if(root==null)
 			return;
 		List<Node> list = new ArrayList<Node>();
-		HoldNode prev = new HoldNode();
-		populateInorderSuccessor(root,prev,list);
+		Integer prev = null;
+		populateInorderSuccessor(root,prev);
 		for(Node n: list)
-		System.out.print(n.id+" ");
+			System.out.print(n.id+" ");
 	}
 	
-	static void populateInorderSuccessor(Node node, HoldNode prev, List<Node> list) {
+	static Integer populateInorderSuccessor(Node node, Integer prev) {
 		if(node==null)
-			return;
-		populateInorderSuccessor(node.left,prev,list);
-		System.out.println(node.id+" "+(prev.prev!=null?prev.prev.id:null));
-		list.add(node);
-		prev.prev = node;
-		populateInorderSuccessor(node.right,prev,list);
+			return prev;
+		prev = populateInorderSuccessor(node.left,prev);
+		int temp = node.id;
+		if(prev!=null)
+			node.id = prev;
+		prev = temp;
+		return populateInorderSuccessor(node.right,prev);
 	}
 	
+	
+	static void printInorder(Node root) {
+		if(root==null)
+			return;
+		printInorder(root.left);
+		System.out.print(root.id+" ");
+		printInorder(root.right);
+	}
 	public static void main(String[] args) {
 		ConstructBinaryTree CBT = new ConstructBinaryTree();
 		List<Node> preorder = new ArrayList<Node>();
@@ -51,7 +62,10 @@ public class PopulateInorderSuccessor {
 		inorder.add(new Node(70));
 		inorder.add(new Node(90));
 		Node root = CBT.PreInorders(preorder, inorder, 0 , preorder.size() - 1, 0 ,preorder.size() - 1);
+		printInorder(root);
 		populateInorderSuccessor(root);
+		System.out.println();
+		printInorder(root);
 	}
 }
 

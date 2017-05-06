@@ -47,6 +47,7 @@ public class Knapsack {
 		}
 		int i = items.size()-1;
 		int j = totalWeight;
+		int value = 0;
 		while(i>=0) {
 			if(i==0) {
 				if(j!=0)
@@ -56,20 +57,23 @@ public class Knapsack {
 			if(matrix[i][j]!=matrix[i-1][j]) {
 				pickedItems.add(items.get(i));
 				j = j-items.get(i).weight;
+				value += items.get(i).value;
+				System.out.println(items.get(i).weight);
 			}
-			i = i-1;
+			if(matrix[i][j]<=matrix[i-1][j])
+				i = i-1;
 		}
-		
+		System.out.println("Value "+value);
 		return pickedItems;
 	}
 	
 	public static void main(String[] args) {
 		List<Item> items = new ArrayList<Item>();
-		items.add(new Item(1,1));
+		items.add(new Item(2,2));
 		items.add(new Item(4,3));
 		items.add(new Item(5,4));
-		items.add(new Item(7,5));
-		System.out.println(knapsack(items,9));
+		items.add(new Item(6,5));
+		System.out.println(knapsack(items,12));
 	}
 }
 

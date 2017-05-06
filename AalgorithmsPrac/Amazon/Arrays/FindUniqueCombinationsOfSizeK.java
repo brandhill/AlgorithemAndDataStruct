@@ -15,12 +15,12 @@ public class FindUniqueCombinationsOfSizeK {
 		
 		
 		findUniqueCombinationsHelper("",s,k,output);
-		
+		System.out.println(output);
 		return output;
 	}
 	
 	static void findUniqueCombinationsHelper(String prefix, String s, int k, List<String> list) {
-		System.out.println(prefix+" "+s);
+//		System.out.println(prefix+" "+s);
 		if(prefix.length()==k) {
 			list.add(prefix);
 			return;
@@ -30,6 +30,9 @@ public class FindUniqueCombinationsOfSizeK {
 			findUniqueCombinationsHelper(prefix+s.charAt(i),s.substring(i+1),k,list);
 		}
 	}
+
+	
+	
 	
 	public static void main(String[] args) {
 		findUniqueCombinations("ABCDE",3);

@@ -24,7 +24,7 @@ public class DeckofCards {
 	}
 	
 	void ShuffleCards() {
-		Reset();
+		dealCount = 0;
 		Random random = new Random();
 		int len = cards.length;
 		for(int i=0; i< len; i++) {
@@ -43,6 +43,7 @@ public class DeckofCards {
 	
 	void Reset() {
 		dealCount = 0;
+		ShuffleCards();
 	}
 	
 	void printCards() {

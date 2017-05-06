@@ -1,9 +1,9 @@
 package Designing.FileSystem;
 
-public class System {
+public class System1 {
 	private Directory root;
 	
-	public System() {
+	public System1() {
 		root = new Directory(null,"MyComputer",1);
 	}
 	
@@ -12,11 +12,12 @@ public class System {
 	}
 	
 	public static void main(String[] args) {
-		System system = new System();
+		System1 system = new System1();
 		Directory root = system.OpenDirectory();
 		root.createNewDirectory("Folder1", 2);
 		root.createNewDirectory("Folder2", 3);
 		root.createNewFile("File1",4);
+		System.out.println(root);
+		System.out.println(root.openContent());
 	}
-
 }

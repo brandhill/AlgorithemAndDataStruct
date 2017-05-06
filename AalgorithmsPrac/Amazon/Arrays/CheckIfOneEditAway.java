@@ -44,6 +44,6 @@ public class CheckIfOneEditAway {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println(checkIfOneEditAway("abes","abd"));
+		System.out.println(checkIfOneEditAway("abes","abeds"));
 	}
 }

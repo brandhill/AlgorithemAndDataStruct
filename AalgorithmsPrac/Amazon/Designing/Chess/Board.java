@@ -26,7 +26,6 @@ public class Board {
 	}
 	
 	List<Piece> getPieces(Color color) {
-		
 		return null;
 	}
 	
@@ -35,7 +34,4 @@ public class Board {
 		// if yes move piece and update piece position
 		return false;
 	}
-	
-	
-	
 }

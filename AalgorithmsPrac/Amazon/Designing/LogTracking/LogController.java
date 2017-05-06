@@ -16,6 +16,4 @@ public class LogController {
 	List<Page> pageList = new ArrayList<Page>();
 	
 	
-	
-	
 }

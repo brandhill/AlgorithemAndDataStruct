@@ -20,7 +20,7 @@ public abstract class Content {
 		this.id = id;
 		this.parent = parent;
 		this.name = name;
-		this.path = (parent.path==null?"":parent.path)+"/"+name;
+		this.path = (parent==null?"":parent.path)+"/"+name;
 	}
 	
 	@Override

@@ -23,7 +23,7 @@ public class DesignStackUsingQueue {
 			Qb = q2;
 		}
 		Integer n = null;
-		while(Qa.size()>1) {
+		while(!Qa.isEmpty()) {
 			n = Qa.poll();
 			Qb.offer(n);
 		}

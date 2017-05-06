@@ -5,6 +5,7 @@ import java.util.Map;
 
 // https://www.careercup.com/question?id=6017875829587968
 
+// Incomplete
 public class FindTheSmallestNumberWith1and0DivisibleByN {
 	
 	static Double findSmallestNumber(int n) {

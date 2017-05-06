@@ -17,6 +17,10 @@ public class MiceAndHoles {
 		return max;
 	}
 	
+	// not equal
+	
+	
+	
 	public static void main(String[] args) {
 		
 	}

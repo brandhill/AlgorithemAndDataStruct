@@ -36,21 +36,22 @@ public class HuffmanCoding {
           System.out.println("right "+right.count);
     	  System.out.println("left "+left.count);
           Node node = new Node(left.c+right.c,left.count+right.count);
-          node.left = left;
+          node.left = left; 
           node.right = right;
           heap.offer(node);
       }
 
       Node root = heap.poll();
-
+      System.out.println(root.c);
       huffmanCodingHelper(root,map,"");
 
       return map;
   }
 
   static void huffmanCodingHelper(Node node,Map<String,String> map, String code) {
-	  System.out.println(node.c+" "+code);
+	  
       if(node.left == null && node.right == null) {
+    	  System.out.println(node.c+" "+code);
         map.put(node.c,code);
         return;
       }

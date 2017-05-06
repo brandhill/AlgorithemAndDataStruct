@@ -14,12 +14,11 @@ import java.util.List;
 public class PrintBraces {
 	
 	static void printBraces(int n) {
-	
 		printBraces("",n,n);
 	}
 	
 	static private void printBraces(String s, int i, int j) {
-
+		
 		if(i==0 && j==0) {
 			System.out.println(s);
 			return;
@@ -29,11 +28,10 @@ public class PrintBraces {
 			printBraces(s+"{",i-1,j);
 		if(i<j)
 			printBraces(s+"}",i,j-1);
-		
 //		System.out.println("end "+ s);
 	}
 	
 	public static void main(String[] args) {
-		printBraces(1);
+		printBraces(2);
 	}
 }

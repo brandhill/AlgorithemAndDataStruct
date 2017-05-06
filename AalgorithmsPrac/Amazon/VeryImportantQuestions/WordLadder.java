@@ -69,7 +69,49 @@ public class WordLadder {
 		return null;
 
 	}
-	 
+	
+	
+	List<String> wordsLadder(String start, String end, Set<String> dict) {
+		List<String> output = new ArrayList<String>();
+		if(!dict.contains(start) || !dict.contains(end)) {
+			return output;
+		}
+		
+		Queue<Word> queue = new LinkedList<Word>();
+		Word startWord = new Word(start,1);
+		queue.offer(startWord);
+		while(!queue.isEmpty()) {
+			Word word = queue.poll();
+			char[] str = word.word.toCharArray();
+			for(int i=0; i<str.length; i++) {
+				char temp = str[i];
+				for(char c='a'; c<='z'; c++) {
+					str[i] = c;
+					String check = String.valueOf(str);
+					if(check.equals(end)) {
+						output.add(end);
+						Word w = word;
+						while(w!=null) {
+							output.add(w.word);
+							w = w.prev;
+						}
+						return output;
+					}
+					if(dict.contains(check)) {
+						Word newWord = new Word(check,word.numSteps+1);
+						newWord.prev = word;
+						queue.offer(newWord);
+						dict.remove(check);
+					}
+				}
+				str[i] = temp;
+			}
+			
+		}
+		
+		return output;
+	}
+	
 	 
 	 public static void main(String[] args) {
 
