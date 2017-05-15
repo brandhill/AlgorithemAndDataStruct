@@ -11,14 +11,14 @@ public class VendingMachine {
     Map<Integer, Coins> machineCount;
     VendingMachine() {
     	machine = new ArrayList<Coins>();
-    	machine.add(new Coins(25,10));
-    	machine.add(new Coins(21,10));
+    	machine.add(new Coins(25,4));
+    	machine.add(new Coins(20,10));
     	machine.add(new Coins(10,10));
-    	machine.add(new Coins(5,0));
+    	machine.add(new Coins(5,3));
     	machine.add(new Coins(1,10));
     	machineCount = new HashMap<Integer, Coins>();
     	machineCount.put(25, machine.get(0));
-    	machineCount.put(21, machine.get(1));
+    	machineCount.put(20, machine.get(1));
     	machineCount.put(10, machine.get(2));
     	machineCount.put(5, machine.get(3));
     	machineCount.put(1, machine.get(4));
@@ -59,9 +59,9 @@ public class VendingMachine {
     
     public static void main(String[] args) {
     	VendingMachine vendingMachine = new VendingMachine();
-    	System.out.println("ANs "+ vendingMachine.getChange(105));
-    	System.out.println("ANs "+ vendingMachine.getChange(105));
-    	System.out.println("ANs "+ vendingMachine.getChange(105));
+    	System.out.println("ANs "+ vendingMachine.getChange(130));
+//    	System.out.println("ANs "+ vendingMachine.getChange(105));
+//    	System.out.println("ANs "+ vendingMachine.getChange(105));
 	}
   
 }

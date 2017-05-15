@@ -23,8 +23,8 @@ public class Game {
 	}
 	
 	boolean selectGrid(Player p, int x, int y) {
-		if(!checkIfSelectionIsValid(x, y))
-			return false;
+//		if(!checkIfSelectionIsValid(x, y))
+//			return false;
 		board[x][y] = p.symbol;
 		return checkIfWon(p,x,y);
 	}

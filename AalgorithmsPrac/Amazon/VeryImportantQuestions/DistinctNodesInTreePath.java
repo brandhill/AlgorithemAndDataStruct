@@ -26,19 +26,17 @@ public class DistinctNodesInTreePath {
 		}
 		
 		l = getMax(root.left,map);
-		if(root.left!=null) {
-			map.put(root.left.value,map.get(root.left.value)-1);
-			if(map.get(root.left.value)==0) {
-				map.remove(root.left.value);
-			}
-		
-		}
+//		if(root.left!=null) {
+//			map.put(root.left.value,map.get(root.left.value)-1);
+//			if(map.get(root.left.value)==0) {
+//				map.remove(root.left.value);
+//			}
+//		
+//		}
 		r = getMax(root.right,map);
-		if(root.right!=null) {
-			map.put(root.right.value,map.get(root.right.value)-1);
-			if(map.get(root.right.value)==0) {
-				map.remove(root.right.value);
-			}
+		map.put(root.value,map.get(root.value)-1);
+		if(map.get(root.value)==0) {
+			map.remove(root.value);
 		}
 		return Math.max(l, r);
 	}

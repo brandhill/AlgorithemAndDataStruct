@@ -13,12 +13,14 @@ public class FindAllPermutationsOfString {
 		for(char c: charArray) {
 			List<String> temp = new ArrayList<String>();
 			for(String s: permutations) {
-				for(int i=0; i < s.length(); i++) {
+				for(int i=0; i <= s.length(); i++) {
 					count++;
 					String s1 = s.substring(0,i) + c + s.substring(i);
+					System.out.println(s1);
 					temp.add(s1);
 				}
-				temp.add(s+c);
+//				temp.add(s+c);
+//				System.out.println(s+c);
 			}
 			permutations = temp;
 		}
@@ -28,6 +30,6 @@ public class FindAllPermutationsOfString {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println(findPermutations("abcd"));
+		System.out.println(findPermutations("abc"));
 	}
 }

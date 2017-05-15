@@ -71,8 +71,8 @@ public class SplitListIntoEqualSizeAndCloseWeightAsPossible {
 	}
 	
 	public static void main(String[] args) {
-//		int[] arr = {1,3,4,4,5,5};
-		int[] arr = {50,10,200,150,900,250,40,50,950,5,90,80,60,600};
+		int[] arr = {1,3,4,4,5,5};
+//		int[] arr = {50,10,200,150,900,250,40,50,950,5,90,80,60,600};
 		List<Integer> list = new ArrayList<Integer>();
 		for(int i=0; i< arr.length; i++) {
 			list.add(arr[i]);

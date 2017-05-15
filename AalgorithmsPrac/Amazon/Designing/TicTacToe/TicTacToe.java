@@ -1,6 +1,5 @@
 package Designing.TicTacToe;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class TicTacToe {
@@ -18,18 +17,17 @@ public class TicTacToe {
 		System.out.println(newGame.p1.toString());
 		System.out.println(newGame.p2.toString());
 		System.out.println("Game Started");
-		Random random = new Random();
 		while(count < maxCount) {
 			newGame.printBoard();
 			System.out.println(currentPlayerName.name+" turn");
 			System.out.println("Enter grid coordinates");
-			int x =  (Math.abs(random.nextInt())%3);
-			int y = (Math.abs(random.nextInt())%3);
+			int x =  sc.nextInt();
+			int y = sc.nextInt();
 			while(!currentPlayerName.checkIfSelectionIsValid(x, y)) {
 				System.out.println(x+" "+y);
 				System.out.println("Please enter valid co-ordinate in range:" +newGame.size+"X"+newGame.size);
-				x = (Math.abs(random.nextInt())%3);
-				y = (Math.abs(random.nextInt())%3);
+				x = sc.nextInt();
+				y = sc.nextInt();
 			}
 			if(currentPlayerName.selectGrid(x, y)) {
 				System.out.println(currentPlayerName.name+" "+"won the game");

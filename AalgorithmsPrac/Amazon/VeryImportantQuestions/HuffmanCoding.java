@@ -51,7 +51,7 @@ public class HuffmanCoding {
   static void huffmanCodingHelper(Node node,Map<String,String> map, String code) {
 	  
       if(node.left == null && node.right == null) {
-    	  System.out.println(node.c+" "+code);
+//    	  System.out.println(node.c+" "+code);
         map.put(node.c,code);
         return;
       }
